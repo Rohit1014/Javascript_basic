@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <style>
+        body{
+            text-align: center;
+            justify-content: center;
+            display: flex;
+            background-color: blueviolet;
+            align-items: center;
+            height: 100vh;
+        }
+        #container{
+            background-color: white;
+            text-align: center;
+            padding: 50px 50px;
+            
+        }
+        h2{
+            padding: 0px 0px 10px 0px;
+        }
+        input{
+            width: 160x;
+            margin: 10px 0px;
+            padding:15px;
+        }
+        input[type=submit]{
+            width: 130px;
+            background-color: peru;
+            color: antiquewhite;
+            border: 0px;
+        }
+        .nm{
+            color: red;
+            text-align: left;
+            margin: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+    <h2>login</h2>
+    <form action="" onsubmit="return Submit()">
+        <input type="text" placeholder="name" id="name"><br>
+        <p id="error" class="nm"></p>
+        <br>
+        <input type="number" placeholder="password" id="psw"><br>
+        <p id="perror" class="nm"></p><br>
+        <input type="submit">
+    </form>
+</div>
+<script>
+    let n=document.getElementById("name");
+    let p=document.getElementById("psw");
+    let flag;
+    function Submit(){
+        if(n.value==""){
+            document.getElementById("error").innerHTML="name is empty";
+            flag=0;
+        }
+        else if(n.value.length<3){
+            document.getElementById("error").innerHTML="name is short";
+            flag=0;
+        }
+        else{
+            document.getElementById("error").innerHTML="";
+            flag=1;
+        }
+        if(p.value==""){
+            document.getElementById("perror").innerHTML="password is empty";
+            flag=0;
+
+        }
+        else{
+            document.getElementById("perror").innerHTML="";
+            flag=1;
+        }
+        if(flag)
+        {
+            return true;
+        }
+        else{
+        return false;
+        }
+
+    };
+
+</script>
+    
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body{
+            padding: 75px 100px;
+        }
+        #div{
+            padding: 50px;
+            text-align: center;
+            background-color: aqua;
+        }
+        .input{
+            display: inline-block;
+            
+        }
+        
+        h1{
+            text-align: center;
+            color: yellow;
+            font-size: 60px;
+        }
+        .num{
+            padding: 5px 10px;
+            margin: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+        label{
+            font-size: 40px;
+        }
+        .ans1{
+            padding: 5px 10px;
+            margin: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+        }
+        #btn{
+            display: inline-block;
+            font-size: medium;
+            border: 1px ;
+            padding: 5px ;
+            
+            
+        }
+        input{
+            border: 2px solid black;
+        }
+        body{
+            background-color: rgb(142, 142, 243);
+        }
+        button{
+            background-color: pink;
+            font-size: 16px;
+            padding: 5px 10px;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculator</h1>
+    <div id="div">
+        <div class="input">
+            <label for="">NUM1</label><br>
+            <input type="number" id="num1" class="num" value="0">
+
+        </div>
+
+        <div class="input"> 
+            <label for="">NUM2</label><br>
+            <input type="number" id="num2" class="num" value="0">
+        </div>
+        <br>
+        <div class="answer">
+            <label for="">ANSWER</label><br>
+            <input type="number" id="ans" class="ans1">
+
+        </div>
+        <div id="btn">
+            <button id="add" class="btn1">ADD</button>
+            <br>
+        </div>
+        <div id="btn">
+
+
+            <button id="sub" class="btn1">SUB</button>
+            <br>
+        </div>
+        
+        <div id="btn">
+            <button  id="mul"class="btn2">MUL</button>
+            <br>
+        </div>
+        <div id="btn">
+            <button id="diva" class="btn2">DIV</button>
+            <br>
+        </div>
+        
+
+    </div>
+    <script>
+        let num1=document.getElementById("num1");
+        let num2=document.getElementById("num2");
+        let ans=document.getElementById("ans");
+        let add=document.getElementById("add");
+        let sub=document.getElementById("sub");
+        let mul=document.getElementById("mul");
+        let div=document.getElementById("diva");
+
+        let a,b,c;
+        
+        num1.addEventListener("input",function(){
+            a=parseFloat(this.value);
+
+        });
+        num2.addEventListener("input",function(){
+            b=parseFloat(this.value);
+
+        });
+        add.addEventListener("click",function(){
+            c=parseFloat(a+b);
+            if(!Number.isInteger(c)){
+                c=c.toFixed(4);
+            }
+            ans.value=c;
+        });
+        sub.addEventListener("click",function(){
+            c=parseFloat(a-b);
+            if(!Number.isInteger(c)){
+                c=c.toFixed(4);
+            }
+            ans.value=c;
+        });
+        mul.addEventListener("click",function(){
+            c=parseFloat(a*b);
+            if(!Number.isInteger(c)){
+                c=c.toFixed(4);
+            }
+            ans.value=c;
+        });
+        div.addEventListener("click",function(){
+            c=parseFloat(a/b);
+            if(!Number.isInteger(c)){
+                c=c.toFixed(4);
+            }
+            ans.value=c;
+        });
+
+    </script>
+    
+</body>
+</html>
